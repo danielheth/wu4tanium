@@ -8,9 +8,9 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyTitle("wu4tanium")]
 [assembly: AssemblyDescription("Uses the Windows Update Agent API to configure the agent on endpoints.")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("Tanium Inc")]
+[assembly: AssemblyCompany("")]
 [assembly: AssemblyProduct("wu4tanium")]
-[assembly: AssemblyCopyright("Copyright © Tanium Inc 2015")]
+[assembly: AssemblyCopyright("Copyright © 2015")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 
