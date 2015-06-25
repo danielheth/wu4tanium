@@ -14,7 +14,7 @@ class TheBuild(PyJenkinsBuild):
         built = execute(['cmd', '/c', 'build.bat'])
 
         # report results always
-        report_tests( '**/test-reports/*-TEST.xml' )
+        #report_tests( '**/test-reports/*-TEST.xml' )
 
         if not built:
             logger.println('Whoops. It broked.')
