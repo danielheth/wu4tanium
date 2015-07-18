@@ -7,21 +7,13 @@ set msBuildDir=
 
 ::ONLY SIGN IF THE CERT IS AVAILABLE
 if exist "C:\SignCert\MoranIT.pfx" (
-	signtool.exe sign /f "C:\SignCert\MoranIT.pfx" /p "M0r@n!T" /t "http://timestamp.verisign.com/scripts/timestamp.dll" "%WORKSPACE%\bin\Release\wu4tanium.exe"
+	signtool.exe sign /f "C:\SignCert\MoranIT.pfx" /p "%SIGNINGPASSWORD%" /t "http://timestamp.verisign.com/scripts/timestamp.dll" "%WORKSPACE%\wu4tanium\bin\Release\wu4tanium.exe"
 ) else (
 	echo Skipping signing since we're not on build server.
 )
 
 
-pushd wu4tanium\bin\Release\
+pushd %WORKSPACE%\wu4tanium\bin\Release\
 7za.exe a -tzip wu4tanium.zip wu4tanium.exe Interop.WUApiLib.dll
 pushd %WORKSPACE%\
 
-
-
-::ONLY SIGN IF THE CERT IS AVAILABLE
-if exist "C:\SignCert\MoranIT.pfx" (
-	signtool.exe sign /f "C:\SignCert\MoranIT.pfx" /p "M0r@n!T" /t "http://timestamp.verisign.com/scripts/timestamp.dll" "%WORKSPACE%\bin\Release\wu4tanium.zip"
-) else (
-	echo Skipping signing since we're not on build server.
-)
